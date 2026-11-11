@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>槐荫名谱 · 高氏后楼支命名系统</title>
+<style>
+:root{--bg:#0d120e;--panel:rgba(255,255,255,0.045);--panel2:rgba(255,255,255,0.075);--line:rgba(216,183,106,0.22);--gold:#d8b76a;--gold2:#f0d48a;--red:#c8553a;--ink:#ece5d3;--mut:#9a917c;--serif:"Songti SC","STSong","Noto Serif SC",serif}
+*{-webkit-tap-highlight-color:transparent;box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-40%;background:radial-gradient(600px 400px at 20% 15%,rgba(88,140,80,0.20),transparent 60%),radial-gradient(700px 500px at 85% 25%,rgba(216,183,106,0.13),transparent 60%),radial-gradient(800px 600px at 50% 95%,rgba(200,85,58,0.10),transparent 60%);animation:drift 26s ease-in-out infinite alternate;z-index:-1}
+@keyframes drift{from{transform:translate3d(-2%,-1%,0) scale(1)}to{transform:translate3d(2%,2%,0) scale(1.06)}}
+header{padding:calc(34px + env(safe-area-inset-top)) 20px 6px;text-align:center}
+.kicker{font-size:11px;letter-spacing:6px;color:var(--gold);text-transform:uppercase}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(46px,13vw,84px);letter-spacing:0.12em;margin:8px 0 2px;line-height:1.15}
+h1 span{display:inline-block;transition:transform 0.35s cubic-bezier(0.2,1.6,0.4,1),color 0.3s,text-shadow 0.3s;cursor:default}
+h1 span:hover{transform:translateY(-8px) scale(1.08) rotate(-2deg);color:var(--gold2);text-shadow:0 0 34px rgba(240,212,138,0.65)}
+.en-sub{font-size:12px;letter-spacing:5px;color:var(--mut)}
+.motto{margin:20px auto 4px;max-width:620px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 20px;font-family:var(--serif);font-size:clamp(17px,4.6vw,20px);backdrop-filter:blur(8px)}
+.motto small{display:block;font-size:12px;color:var(--mut);margin-top:5px;font-family:"PingFang SC",sans-serif}
+.tabs{display:flex;gap:8px;justify-content:flex-start;overflow-x:auto;padding:16px 14px 10px;position:sticky;top:0;z-index:9;background:linear-gradient(180deg,rgba(13,18,14,0.94),rgba(13,18,14,0.82));backdrop-filter:blur(10px);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:8px 18px;cursor:pointer;font-size:14px;transition:all 0.25s}
+.tab:hover{border-color:var(--gold);transform:translateY(-1px)}
+.tab.on{background:linear-gradient(135deg,#caa252,#a8802f);color:#181207;border-color:transparent;font-weight:600}
+.page{display:none;max-width:900px;margin:0 auto;padding:8px 16px 60px;animation:fadeUp 0.45s ease}
+.page.on{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 18px}
+.chip{border:1px solid var(--line);background:transparent;color:var(--mut);border-radius:999px;padding:5px 14px;cursor:pointer;font-size:13px;transition:all 0.2s}
+.chip.on{background:var(--ink);color:#141310;border-color:var(--ink)}
+.nc{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px 20px 16px;margin-bottom:16px;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s}
+.nc::after{content:"";position:absolute;inset:0;background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(240,212,138,0.13),transparent 65%);opacity:0;transition:opacity 0.3s;pointer-events:none}
+.nc:hover{transform:translateY(-4px);border-color:rgba(240,212,138,0.55);box-shadow:0 18px 44px rgba(0,0,0,0.45)}
+.nc:hover::after{opacity:1}
+.nc .nm{font-family:var(--serif);font-size:clamp(30px,8vw,40px);letter-spacing:0.08em;line-height:1.2}
+.nc .nm span{display:inline-block;transition:transform 0.3s cubic-bezier(0.2,1.8,0.4,1),color 0.25s,text-shadow 0.25s}
+.nc .nm span:hover{transform:translateY(-5px) scale(1.12);color:var(--gold2);text-shadow:0 0 22px rgba(240,212,138,0.7)}
+.score{position:absolute;top:18px;right:20px;text-align:right}
+.score b{font-family:var(--serif);font-size:30px;color:var(--gold2)}
+.score i{display:block;font-style:normal;font-size:11px;color:var(--mut)}
+.py{color:var(--mut);font-size:13px;margin-top:2px}
+.en{display:inline-block;margin-top:8px;color:var(--gold);font-size:12px;border:1px solid var(--line);border-radius:6px;padding:1px 9px;letter-spacing:1px}
+.tag{display:inline-block;background:rgba(216,183,106,0.13);border-radius:6px;font-size:11px;padding:1px 8px;margin:8px 5px 0 0;color:var(--gold2)}
+.plain{margin-top:13px;background:linear-gradient(135deg,rgba(216,183,106,0.14),rgba(200,85,58,0.08));border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:11px 14px;font-size:14.5px}
+.plain b{color:var(--gold2)}
+.bars{margin-top:13px}
+.bar{display:flex;align-items:center;font-size:12px;color:var(--mut);margin:3px 0}
+.bar b{width:60px;font-weight:normal}
+.track{flex:1;height:6px;background:rgba(255,255,255,0.09);border-radius:4px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--red));border-radius:4px;transition:width 0.9s cubic-bezier(0.2,0.8,0.3,1)}
+.bar i{width:30px;text-align:right;font-style:normal}
+.more{margin-top:10px;font-size:13px;color:var(--gold);cursor:pointer;user-select:none}
+.layers{display:none;margin-top:8px;font-size:14px;color:#d9d0ba}
+.nc.open .layers{display:block;animation:fadeUp 0.3s ease}
+.layers div{margin:4px 0;padding-left:14px;text-indent:-14px}
+.layers div::before{content:"— ";color:var(--gold)}
+.poem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media(max-width:560px){.poem{grid-template-columns:repeat(4,1fr);gap:7px}.pz .big{font-size:25px}}
+.pz{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 4px;text-align:center;cursor:pointer;transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;transform-style:preserve-3d;will-change:transform}
+.pz:hover{border-color:var(--gold);box-shadow:0 12px 28px rgba(0,0,0,0.4)}
+.pz.on{border-color:var(--gold2);background:var(--panel2);box-shadow:0 0 0 1px var(--gold2),0 12px 28px rgba(0,0,0,0.4)}
+.pz .big{font-family:var(--serif);font-size:31px}
+.pz .sm{font-size:10.5px;color:var(--mut)}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--panel);border-radius:14px;overflow:hidden}
+th,td{border:1px solid rgba(216,183,106,0.14);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:rgba(216,183,106,0.12);color:var(--gold2);font-weight:600}
+input,select{padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:16px;background:rgba(255,255,255,0.06);color:var(--ink);width:100%}
+input[type="date"],input[type="time"]{color-scheme:dark}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:560px){.frow{grid-template-columns:1fr}}
+label{font-size:13px;color:var(--mut);display:block;margin-bottom:5px}
+button.go{background:linear-gradient(135deg,#caa252,#b4552f);color:#fff;border:none;border-radius:12px;padding:14px;font-size:16px;cursor:pointer;width:100%;letter-spacing:2px;transition:transform 0.2s,box-shadow 0.2s}
+button.go:active{transform:scale(0.98)}
+.out{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:16px;display:none}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:9px;padding:3px 12px;margin:2px;font-family:var(--serif);font-size:18px;background:rgba(255,255,255,0.04)}
+.wx{display:flex;gap:6px;margin:10px 0;flex-wrap:wrap}
+.wx span{flex:1;min-width:56px;text-align:center;border-radius:9px;padding:7px 0;font-size:13px;color:#fff}
+.note{font-size:12px;color:var(--mut);margin-top:10px}
+h2.sec{font-family:var(--serif);font-size:21px;margin:20px 0 10px;letter-spacing:3px;color:var(--gold2)}
+p.body{font-size:14.5px;margin:9px 0;color:#ddd3ba}
+.kbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 17px;font-size:14px;margin:10px 0}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:24px 16px calc(30px + env(safe-area-inset-bottom))}
+</style>
+</head>
+<body>
+<header>
+<div class="kicker">西华 · 后楼支 · 子孙命名系统</div>
+<h1><span>槐</span><span>荫</span><span>名</span><span>谱</span></h1>
+<div class="en-sub">THE LOCUST-SHADE NAMING ATLAS</div>
+<div class="motto">积善之家，必有余庆<small>《周易·坤·文言》——平安健康第一，做好人、造真东西，有余再济人。根在大槐树下，故名槐荫。</small></div>
+</header>
+<nav class="tabs">
+<button class="tab on" data-p="p1">推荐名录</button>
+<button class="tab" data-p="p2">十六字辈</button>
+<button class="tab" data-p="p3">流派审名</button>
+<button class="tab" data-p="p4">生辰推荐器</button>
+<button class="tab" data-p="p5">家族宪章</button>
+<button class="tab" data-p="p6">五行字库</button>
+</nav>
+
+<section class="page on" id="p1">
+<div class="chips" id="chips"></div>
+<div id="names"></div>
+<p class="note">评分五维（各5分）：双亲韵（父ü / 母ing 是否入字）、声调、日常情绪（每天喊出来的心理感）、光感、家族含量。点名字卡片可展开逐字讲解；每个名字都有一段「说人话」——不绕弯子，直接讲它好在哪、差在哪。</p>
+</section>
+
+<section class="page" id="p2">
+<p class="body">新派字辈诗（草案，待家中长辈点头后生效）：</p>
+<div class="kbox" style="text-align:center;font-family:var(--serif);font-size:clamp(18px,5.4vw,23px);letter-spacing:0.3em">晴安宁和 · 乐久明启<br>源远造真 · 承华济生</div>
+<h2 class="sec">用字规则</h2>
+<p class="body"><b>每代 1 个主字 + 3 个副字 + 借字通道。</b>主字顺诗取字、一代一字、全房同辈共用（平辈的孩子们同辈同字）；主字与孩子八字明显相冲或组不出顺口名时，可用副字（主字的前一字、后一字、加「华」），或从全诗借一合喜用之字作辈字（十六字五行俱全：火晴宁乐明、木和启生、水源华济、土安远、金久造真承），谱页注明原因即可。命理的大头调整归自由字（见「五行字库」），辈字只作微调——这是明代皇室「字辈诗＋五行偏旁轮转」双轨制的简化版。</p>
+<p class="body"><b>位置不限首尾。</b>本支旧例辈字居首，新派放宽：居首如「高晴悦」，居尾如「高悦晴」，以顺口和八字配合定。点下面的字，看它作主字时的背景、五行与示例名。</p>
+<div class="poem" id="poem"></div>
+<div class="out" id="poemOut" style="display:block"></div>
+</section>
+<section class="page" id="p3">
+<p class="body">同一套系统，让中国起名各门派挨个过堂。结论先行：<b>没有任何一派能单独定名</b>。本系统的裁决顺序是——孩子八字 ＞ 心理学（日常） ＞ 音韵 ＞ 字义出处 ＞ 字辈 ＞ 三才五格（只参考）。</p>
+<table>
+<tr><th style="width:104px">门派</th><th>它看什么</th><th>对「晴」与本系统的裁决</th></tr>
+<tr><td>八字五行派</td><td>以孩子喜用神选字，忌「缺啥补啥」，须旺衰、调候、格局、冲合四层合参</td><td>晴通行归火：寒局大吉、燥局减分——所以晴只是预选主字，终审冲了就走副字池或借字</td></tr>
+<tr><td>三才五格派</td><td>按笔画算五格三才，源自日本熊崎健翁</td><td>机械、与汉字文化无关，本家已定：只参考，不裁决，不为凑格改字</td></tr>
+<tr><td>生肖派</td><td>按生肖喜忌字根</td><td>丙午马年：马喜日光、安居，晴（日）、安（宀）合；此派最弱，只查相冲</td></tr>
+<tr><td>音韵派</td><td>声调起伏、搭配、谐音</td><td>晴 qíng 上扬，与高、悦组 1-2-4 顿挫最佳；反例「洛」：四声下沉+谐音「落」，寓意再好也出局</td></tr>
+<tr><td>字义典故派</td><td>出处与文化分量</td><td>晴有在地出处：西华是女娲建都补天之地，「补完天，天放晴」是本支独占的典故；此派冠军是静瑜</td></tr>
+<tr><td>字辈宗法派</td><td>字辈诗、同辈同字、昭穆有序</td><td>晴为新派第一字，与旧派并行（老派新派并存是谱牒常态）；宗法要一致，故副字与借字是唯一例外通道</td></tr>
+<tr><td>现代心理学派</td><td>加工流畅性、语义启动、喊名测试、40岁职业测试</td><td>晴＝好天气，每天被喊等于每天被祝一句天晴；扣分项是近年女名用晴渐多，靠组合保独特性。本家最高日常标准</td></tr>
+</table>
+<p class="note">辩证结论：晴不是十六字里文化最厚的（明、源、华更厚），也不是最个别的，但它是唯一同时占住母亲ing韵、父亲调候之光、娲城补天叙事、日常正向情绪四条线的字。第一代主字要的不是最强，是最合。备选辩证：安，第一义最正但太静、字辈感太重；明，经典第一但与「高」叠成「高明」显自夸。故晴留任，副字池：宁、和、华。</p>
+</section>
+
+<section class="page" id="p4">
+<p class="body">孩子出生后把生辰填进来：系统按出生地经度校正真太阳时、粗排四柱、做预览级旺衰与调候判断，再给名录重新排序，并直接给出辈字建议（主字合不合、借哪个字）。<b>这是预览，不是终审</b>——终审走命名 Skill 的四层法（旺衰四得 / 调候 / 格局 / 冲合），逐项复核后定稿。</p>
+<div class="frow">
+<div><label>出生日期（公历）</label><input type="date" id="bd" value="2026-11-20"></div>
+<div><label>出生时间（精确到分钟）</label><input type="time" id="bt" value="12:00"></div>
+</div>
+<div class="frow">
+<div><label>出生城市</label><select id="bcity">
+<option value="121.47">上海</option><option value="114.67">周口·西华</option><option value="113.63">郑州</option><option value="116.41">北京</option><option value="114.06">深圳</option><option value="104.07">成都</option><option value="87.62">乌鲁木齐</option>
+</select></div>
+<div><label>性别</label><select id="bsex"><option value="f">女</option><option value="m">男</option></select></div>
+</div>
+<button class="go" id="bgo">排 出 四 柱 · 重 新 推 荐</button>
+<div class="out" id="bout"></div>
+</section>
+
+<section class="page" id="p5">
+<h2 class="sec">起源故事 · 三句版</h2>
+<p class="body">根在大槐树——祖上自山西洪洞集结出发；家在西华——落脚娲城后楼村，繁衍至今；愿从这一代起，天是晴的，人是安的。此谱名「槐荫」，就是取这棵树的荫：祖辈赶路，后辈乘凉。</p>
+<h2 class="sec">英文名 · 需要吗</h2>
+<p class="body"><b>不进户口本，但建议预备一个。</b>AI 这一行的上升通道天然带英文场景，预备成本为零，用时不抓瞎。本支默认 <b>Ada</b>——致敬 Ada Lovelace：史上第一位程序员、诗人拜伦之女、提出「诗性科学」并预言机器能作曲绘图的人。父辈正是 AI 这一代的亲历者，把她的名字留给女儿，是本支与这个时代的一份纪念。其余按中文名气质搭配，写在每个名字卡片上（Clara＝晴/明亮，Jade＝瑜，Luna＝月，Grace＝令仪，Dawn＝晓）。</p>
+<h2 class="sec">家规 · 十一条</h2>
+<div class="kbox">
+1. 孩子八字第一，父母八字与彩头让步，且明说让了哪条。<br>
+2. 先过音：喊名测试（吃饭、下楼、公园喊人）＋40岁职业测试，不过者出局，不论典故。<br>
+3. 全常用字，不用生僻字给孩子一辈子添解释成本。<br>
+4. 每天叫出来的情绪要正：明亮、安稳、喜悦优先；冷、沉、坠的字慎用。<br>
+5. 双亲韵是家族签名（父ü、母ing），能全则全；只能取一时保母亲ing——姓已是父亲的。<br>
+6. 字辈 1主+3副+借字，主字相冲有通道，注明原因即可，不算破规矩。<br>
+7. 三才五格只参考，不为凑笔画改字。<br>
+8. 玄学是祝福语言，不是命运判决：只说建议，不说定数。<br>
+9. 名字是预选，出生终审；上户口前父母共同拍板。<br>
+10. 传承的目的是让后代过得好：孩子成年后想改名，家里不拦。<br>
+11. 留白律：寓意不塞满，不把名字绑死在任何一个赛道上——下一代的「幸运神」还没揭晓，名字给未知留位置。
+</div>
+<h2 class="sec">生效与待办</h2>
+<p class="body">字辈诗与家训待家中长辈点头、平辈知情后生效；更早的祖辈分诗若日后问到，另册记录，与新派并行。</p>
+</section>
+
+<section class="page" id="p6">
+<p class="body">自由字从这里选：先由生辰终审定喜用五行，再在对应行挑字，最后过双亲韵与喊名测试。强弱策略：<b>偏强</b>取克、泄、耗之行；<b>偏弱</b>取生、扶之行；<b>中和</b>调候优先（寒取火、燥取水）。特殊格局（从格等）翻转逻辑，必须人工终审。</p>
+<table>
+<tr><th style="width:52px">五行</th><th>字库（常用、明亮、已过音感初筛）</th><th>取用时机</th></tr>
+<tr><td>木</td><td>芷 芸 栩 桐 柠 筠 蔚 森（诗中：和 启 生）</td><td>喜生扶之木、寒局木待火燃、缺木而局不忌木</td></tr>
+<tr><td>火</td><td>晴 明 晗 昭 暖 昕 灵 煦（诗中：晴 宁 乐 明）</td><td>寒局调候第一选；冬生、水旺者优先</td></tr>
+<tr><td>土</td><td>安 远 怡 婉 予 恩 悠 宥（诗中：安 远）</td><td>火炎土燥忌之；水泛喜土制水、木强喜土耗木</td></tr>
+<tr><td>金</td><td>瑜 真 承 悦 钰 姝 思 睿（诗中：久 造 真 承）</td><td>木旺喜金修剪、水局喜金生源</td></tr>
+<tr><td>水</td><td>华 源 济 澜 沐 汐 涵 澄（诗中：源 华 济）</td><td>燥局调候第一选；夏生、火旺者优先</td></tr>
+</table>
+<p class="note">提醒：字的五行归属有字形、字义、数理、音律四派，常不一致（如晴：字形派属火、数理派按康熙12画属木）。本库按字形/字义主流派标注，只作终审一票，禁止单因子定名。另有硅基时代新字四个——芯（硅中有心）、灵（灵犀相通）、元（纪元计数）、思（碳硅共有的动作），已用于名录中的灵晴、元宁；熵、弦、码、算以生僻、匠气、绑赛道出局。</p>
+</section>
+<footer>槐荫名谱 · HUAIYIN NAMING ATLAS · v4<br>出生终审走 gao-family-naming skill · 本页不载任何家人隐私信息</footer>
+
+<script>
+const DIMS=[["yun","双亲韵"],["sheng","声调"],["qing","日常情绪"],["guang","光感"],["zu","家族含量"]];
+const NAMES=[
+{n:"高晴悦",py:"gāo qíng yuè",tones:"1-2-4",cat:["beizi","shuangyun"],en:"Ada",elem:["火","金"],s:{yun:5,sheng:5,qing:5,guang:5,zu:4},plain:"每天喊她，等于喊一句「天晴了，开心点」。辈字占着，和堂兄弟姐妹摆一起一看就是一家人；爸妈的声音还都藏在字里。属于挑不出大毛病的一款——不惊艳，但耐用一辈子。",layers:["晴：新派第一代主字，女娲补天之后的那片天，也藏妈妈的 ing","悦：藏爸爸「举」的 üe 音，意思就是高兴，不用解释","声调 1-2-4 先平后扬再收，喊起来有顿挫，像喊人答应的调子"]},
+{n:"高华晴",py:"gāo huá qíng",tones:"1-2-2",cat:["zuji"],en:"Clara",elem:["水","火"],s:{yun:3,sheng:4,qing:5,guang:5,zu:5},plain:"把老家县城的名字和「雨过天晴」缝在一个名里。外人只觉得好听，家里人知道每个字打哪来。代价是声调偏平，喊起来没那么有起伏。",layers:["华：西华县得名之字（宋华氏居西者称西华），往上是华夏的华","晴：娲城补完天之后的天，带日光，藏妈妈的 ing","爸爸的音没进字——但姓高就是爸爸给的第一个字，不必再藏"]},
+{n:"高悦晴",py:"gāo yuè qíng",tones:"1-4-2",cat:["shuangyun","gongyi"],en:"Ada",elem:["金","火"],s:{yun:5,sheng:5,qing:5,guang:5,zu:3},plain:"纯粹图好喊、图心情的一款，工艺最讲究：爸妈的音全在，声调全场最好听，两个字还都带光。短处是祖籍没写在脸上，故事得靠嘴讲。",layers:["悦：爸爸的 üe 音＋喜悦本身","晴：妈妈的 ing＋补天之天，居尾同样是辈字，位置合规","1-4-2 是全场最利落的顿挫，老师点名、领导介绍都不吃亏"]},
+{n:"高静瑜",py:"gāo jìng yú",tones:"1-4-2",cat:["classic","shuangyun"],en:"Jade",elem:["金","金"],s:{yun:5,sheng:5,qing:3,guang:2,zu:3},plain:"最有文化的一款，翻开诗经楚辞都能找到出处，长辈席上最拿得出手。但它安静、偏冷，跟你定的「每天喊出好天气」不太合拍——所以从原首选降为纪念款。",layers:["静：出《诗经·静女》，藏妈妈的 ing","瑜：出《楚辞》怀瑾握瑜，美玉，藏爸爸的 ü","另有一位数学系出身的行业前辈名字里也用瑜字，算个巧合彩蛋"]},
+{n:"高晴华",py:"gāo qíng huá",tones:"1-2-2",cat:["beizi","zuji"],en:"Clara",elem:["火","水"],s:{yun:3,sheng:4,qing:4,guang:5,zu:5},plain:"辈分和老家一手一个，全写在明面上，稳重、大气、来历清楚。短处是爸妈的音只占了一半，情绪上也不如晴悦那么亮。",layers:["晴居首：辈字规规矩矩站在第一个字","华居尾：祖籍落在最后一个字，收得住","意象是晴空之华，气象开阔，适合想要「大气」多过「亲昵」的取向"]},
+{n:"高华悦",py:"gāo huá yuè",tones:"1-2-4",cat:["zuji"],en:"Ada",elem:["水","金"],s:{yun:3,sheng:5,qing:5,guang:3,zu:5},plain:"声调和晴悦一样好听，老家也在字面上。就是妈妈的音没进来，差一口气；光感靠「悦」的心情，没有太阳。",layers:["华：祖籍与华夏","悦：爸爸的 üe＋喜悦","1-2-4 顿挫与主推款并列最佳，是华晴的「好喊升级版」"]},
+{n:"高月明",py:"gāo yuè míng",tones:"1-4-2",cat:["shuangyun","classic"],en:"Luna",elem:["木","火"],s:{yun:5,sheng:4,qing:4,guang:5,zu:2},plain:"靠姓取巧的一款——「高月明」三个字连起来就是一幅画：月亮高高地挂着。巧是真巧，爸妈的音也全在，就是没什么家族故事，全靠意境撑着。",layers:["月：藏爸爸的 üe，月光是柔光","明：藏妈妈的 ing，日月之明","全场唯一「姓参与组词」的名字，独特性靠结构不靠生僻字"]},
+{n:"高晓宁",py:"gāo xiǎo níng",tones:"1-3-2",cat:["gongyi"],en:"Dawn",elem:["火","火"],s:{yun:3,sheng:4,qing:4,guang:4,zu:2},plain:"「天亮了，安心了。」不争不抢，最贴你说的平安幸福第一。短处是气场偏温和，也没占爸爸的音。",layers:["晓：破晓，一天的第一缕光","宁：安宁，藏妈妈的 ing，也是字辈诗第三字","整体是「日子安稳」的直译，老人听了最放心"]},
+{n:"高晓瑜",py:"gāo xiǎo yú",tones:"1-3-2",cat:["classic"],en:"Jade",elem:["火","金"],s:{yun:3,sheng:4,qing:4,guang:4,zu:3},plain:"黎明的光配一块温玉，好看也好听。问题还是老问题：妈妈的音没进来。",layers:["晓：黎明之光，比晴更早、更柔","瑜：美玉，藏爸爸的 ü","光与玉的组合，走的是温润路线，不是明亮路线"]},
+{n:"高晴瑜",py:"gāo qíng yú",tones:"1-2-2",cat:["beizi","classic"],en:"Jade",elem:["火","金"],s:{yun:5,sheng:4,qing:4,guang:5,zu:4},plain:"辈字、爸妈的音、光，全齐了——纸面配置最全的一款。毛病在声调：三个字都平，喊起来像一条直线，不如晴悦有起伏。",layers:["晴居首占辈字，又藏妈妈 ing，一字两职","瑜藏爸爸 ü，又是美玉","是「配置党」的选择：什么都有，代价是平"]},
+{n:"高悦宁",py:"gāo yuè níng",tones:"1-4-2",cat:["shuangyun"],en:"Ada",elem:["金","火"],s:{yun:5,sheng:5,qing:5,guang:2,zu:2},plain:"一句祝福话：开心、安宁，完事。没有任何故事和出处，胜在心意直白，爸妈的音还全在。",layers:["悦：爸爸的 üe","宁：妈妈的 ing＋安宁本义","适合完全不想要典故负担、只图日子好的一派审美"]},
+{n:"高望晴",py:"gāo wàng qíng",tones:"1-4-2",cat:["zuji"],en:"Clara",elem:["水","火"],s:{yun:3,sheng:5,qing:5,guang:5,zu:4},plain:"「望」是咱高家郡望的望，又是抬头看天的意思，一字双关，很聪明。就是望字略带长辈气，小姑娘叫着稍显老成。",layers:["望：渤海郡望的望，家族身份的字面凭证","晴：抬头望见的天","登高望晴——姓、志、天三个意思贯通"]},
+{n:"高令仪",py:"gāo lìng yí",tones:"1-4-2",cat:["classic"],en:"Grace",elem:["火","金"],s:{yun:3,sheng:5,qing:3,guang:2,zu:4},plain:"大家闺秀款：出处和历史人物都是顶配，将来走学术、体制路线很加分。日常喊着偏端着，不够亲昵。",layers:["令仪：出《诗经》「令仪令色」，举止得体","高滔滔（宋宣仁皇后）被称女中尧舜，是高家女儿的历史天花板","令藏妈妈的 ing"]},
+{n:"高兰心",py:"gāo lán xīn",tones:"1-2-1",cat:["classic"],en:"Iris",elem:["木","金"],s:{yun:2,sheng:3,qing:4,guang:2,zu:4},plain:"冲着兰陵王高长恭去的一款：貌柔心壮，柔里带刚，故事性很强。毛病是爸妈的音一个没占，声调还往下收。",layers:["兰心蕙质，出自高长恭的兰陵王意象","高姓以柔化刚的祖传解法都在这个兰字里","属于「典故党」选择，日常分让位给故事分"]},
+{n:"高芝宁",py:"gāo zhī níng",tones:"1-1-2",cat:["classic"],en:"Ada",elem:["木","火"],s:{yun:3,sheng:4,qing:4,guang:2,zu:3},plain:"灵芝保平安那一路的，老人会很喜欢。声调前两个字连平，气势弱一截，爸妈的音也只占妈妈一半。",layers:["芝：灵芝，安康长寿的民俗符号；唐名将高仙芝名中亦有芝","宁：安宁，藏妈妈 ing","整体是「健康长寿」的直译版"]},
+{n:"高明朗",py:"gāo míng lǎng",tones:"1-2-3",cat:["gongyi"],en:"Clara",elem:["火","火"],s:{yun:3,sheng:5,qing:5,guang:5,zu:2},plain:"把「朗朗上口」四个字直接写进名字，直白到极点，男孩女孩都能用。就是太直白了——没故事，也偏男孩子气。",layers:["明：日月之明，藏妈妈 ing","朗：开朗、朗读，都是往上走的词","留作男孩名或中性取向时的现成模板"]},
+{n:"高灵晴",py:"gāo líng qíng",tones:"1-2-2",cat:["gongyi"],en:"Ada",elem:["火","火"],s:{yun:3,sheng:4,qing:5,guang:4,zu:3},plain:"冲着 AI 时代去的一款：「心有灵犀一点通」的灵——人和机器说到底都是求一个相通。和英文名 Ada 是一套叙事。毛病是两个字都属火，八字再怕火就直接淘汰。",layers:["灵：灵犀、灵气，硅基时代过关的四个新字之一","晴：补天之天，又藏妈妈 ing（一名双 ing）","中英文互文最强的一款：中文讲相通，英文纪念第一位程序员"]},
+{n:"高元宁",py:"gāo yuán níng",tones:"1-2-2",cat:["gongyi"],en:"Ada",elem:["土","火"],s:{yun:3,sheng:4,qing:4,guang:2,zu:3},plain:"「新纪元的孩子，一生安宁。」元字管时代，宁字管日子，压舱感很强。就是没什么光，亮度不够，不如晴字那一挂耀眼。",layers:["元：纪元、元始，时代的计数单位","宁：安宁，藏妈妈 ing，也是字辈诗的字","适合把「稳」排在「亮」前面的取向"]}
+];
+const POEM=[
+{c:"晴",el:"火",py:"qíng",ben:"雨止日出，天空放晴",jia:"补天之后的天空；新派第一代，愿这一代风雨到头",shi:"男女皆宜",ex:"高晴悦 · 高晴川"},
+{c:"安",el:"土",py:"ān",ben:"屋下有女，居而安",jia:"平安，家族第一义的正字；重在稳，不在显",shi:"男女皆宜",ex:"高安然 · 高安宁"},
+{c:"宁",el:"火",py:"níng",ben:"安宁、宁静",jia:"安而久之谓宁：平安的第二层，是心定",shi:"偏女宜，男亦可",ex:"高宁远 · 高宁悦"},
+{c:"和",el:"木",py:"hé",ben:"五味调和、乐音相和",jia:"家和万事兴；和气是长久之家的日常功夫",shi:"男女皆宜",ex:"高和光 · 高和悦"},
+{c:"乐",el:"火",py:"lè",ben:"喜乐；亦读 yuè 为礼乐",jia:"平安之后要有乐——幸福不是忍出来的，是过出来的",shi:"男女皆宜",ex:"高乐晴 · 高乐衡"},
+{c:"久",el:"金",py:"jiǔ",ben:"长久、恒久",jia:"长长久久四个字里最实的那个；不求快，求久",shi:"偏男宜",ex:"高久安 · 高久明"},
+{c:"明",el:"火",py:"míng",ben:"日月之明；《大学》「明明德」",jia:"明理是智能时代的护身符；藏母 ing 韵，家族签名常驻字",shi:"男女皆宜",ex:"高明真 · 高明澜"},
+{c:"启",el:"木",py:"qǐ",ben:"开启、启程、启明星",jia:"纪念父辈一代人亲历智能开启；新时代的门环",shi:"偏男宜，女亦可",ex:"高启澜 · 高启明"},
+{c:"源",el:"水",py:"yuán",ben:"水之源、事之本",jia:"三源合一：洪洞之根、淮河之源、数据之源",shi:"男女皆宜",ex:"高源衡 · 高源清"},
+{c:"远",el:"土",py:"yuǎn",ben:"高远、致远",jia:"非宁静无以致远；远是安宁的结果，不是野心",shi:"男女皆宜",ex:"高远宁 · 高远晴"},
+{c:"造",el:"金",py:"zào",ben:"创造、造物",jia:"造物者之家：造天、造人、造智能，一脉相承",shi:"偏男宜",ex:"高造极 · 高造衡"},
+{c:"真",el:"金",py:"zhēn",ben:"真实、求真",jia:"不自欺是全家手艺的地基；造之前，先真",shi:"男女皆宜",ex:"高明真 · 高真宁"},
+{c:"承",el:"金",py:"chéng",ben:"承继、担当",jia:"承的是故事与家训，不是包袱；接得住，才传得下",shi:"男女皆宜",ex:"高承华 · 高承安"},
+{c:"华",el:"水",py:"huá",ben:"光华、华夏；西华得名之字",jia:"祖籍的字：宋华氏居西者称西华；这一代把土地写进名字",shi:"男女皆宜",ex:"高承华 · 高华晴"},
+{c:"济",el:"水",py:"jì",ben:"济世、渡人、同舟共济",jia:"有余之后那一步：余庆及人，造福排在安家之后",shi:"偏男宜，女亦可",ex:"高济生 · 高济宁"},
+{c:"生",el:"木",py:"shēng",ben:"生命、生长、生生不息",jia:"《易》「生生之谓易」；生物、医学、生成智能共用一个生字",shi:"男女皆宜",ex:"高济生 · 高生光"}
+];
+const CATS=[["all","全部"],["beizi","辈字版"],["shuangyun","双亲韵全中"],["zuji","祖籍版"],["classic","经典版"],["gongyi","顺口版"]];
+let curCat="all";
+const chipsEl=document.getElementById("chips");
+CATS.forEach(function(c){
+  const b=document.createElement("button");b.className="chip"+(c[0]==="all"?" on":"");b.textContent=c[1];
+  b.onclick=function(){curCat=c[0];document.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on")});b.classList.add("on");renderNames();};
+  chipsEl.appendChild(b);
+});
+function total(n){return n.s.yun+n.s.sheng+n.s.qing+n.s.guang+n.s.zu}
+function renderNames(){
+  const box=document.getElementById("names");box.innerHTML="";
+  NAMES.filter(function(n){return curCat==="all"||n.cat.indexOf(curCat)>=0})
+  .slice().sort(function(a,b){return total(b)-total(a)}).forEach(function(n){
+    const d=document.createElement("div");d.className="nc";
+    const chars=n.n.split("").map(function(ch){return "<span>"+ch+"</span>"}).join("");
+    let bars="";DIMS.forEach(function(dm){bars+='<div class="bar"><b>'+dm[1]+'</b><div class="track"><div class="fill" data-w="'+(n.s[dm[0]]*20)+'"></div></div><i>'+n.s[dm[0]]+'/5</i></div>';});
+    let tags=n.cat.map(function(c){return '<span class="tag">'+(CATS.filter(function(x){return x[0]===c})[0]||["",c])[1]+'</span>';}).join("");
+    d.innerHTML="<div class='nm'>"+chars+"</div><div class='score'><b>"+total(n)+"</b><i>总分 / 25</i></div>"
+      +"<div class='py'>"+n.py+" · 声调 "+n.tones+" · 字五行 "+n.elem.join("、")+"</div>"
+      +"<div>"+tags+"</div><span class='en'>EN · "+n.en+"</span>"
+      +"<div class='plain'><b>说人话：</b>"+n.plain+"</div>"
+      +"<div class='bars'>"+bars+"</div>"
+      +"<div class='more'>逐字讲解 ▾</div>"
+      +"<div class='layers'>"+n.layers.map(function(L){return "<div>"+L+"</div>"}).join("")+"</div>";
+    d.addEventListener("mousemove",function(e){const r=d.getBoundingClientRect();d.style.setProperty("--mx",((e.clientX-r.left)/r.width*100)+"%");d.style.setProperty("--my",((e.clientY-r.top)/r.height*100)+"%");});
+    d.querySelector(".more").onclick=function(){d.classList.toggle("open");this.textContent=d.classList.contains("open")?"收起 ▴":"逐字讲解 ▾";};
+    box.appendChild(d);
+  });
+  requestAnimationFrame(function(){setTimeout(function(){document.querySelectorAll(".fill").forEach(function(f){f.style.width=f.dataset.w+"%";});},60);});
+}
+renderNames();
+const poemEl=document.getElementById("poem");
+POEM.forEach(function(z,i){
+  const d=document.createElement("div");d.className="pz"+(i===0?" on":"");
+  d.innerHTML="<div class='big'>"+z.c+"</div><div class='sm'>第"+(i+1)+"代 · "+z.el+"</div>";
+  d.addEventListener("mousemove",function(e){const r=d.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-0.5, y=(e.clientY-r.top)/r.height-0.5;d.style.transform="perspective(500px) rotateY("+(x*16)+"deg) rotateX("+(-y*16)+"deg) translateY(-3px)";});
+  d.addEventListener("mouseleave",function(){d.style.transform="";});
+  d.onclick=function(){document.querySelectorAll(".pz").forEach(function(x){x.classList.remove("on")});d.classList.add("on");showPoem(i);};
+  poemEl.appendChild(d);
+});
+function showPoem(i){
+  const z=POEM[i];
+  const prev=i>0?POEM[i-1].c:"（诗首无前字，用「明」）", next=i<POEM.length-1?POEM[i+1].c:"（诗尾无后字，用「新」）";
+  document.getElementById("poemOut").innerHTML="<h3 style='font-family:var(--serif);font-size:23px'>第"+(i+1)+"代主字："+z.c+" <span style='color:var(--mut);font-size:13px'>"+z.py+" · 五行"+z.el+"</span></h3>"
+   +"<p class='body'><b>本义：</b>"+z.ben+"</p><p class='body'><b>家族义：</b>"+z.jia+"</p>"
+   +"<p class='body'><b>适配：</b>"+z.shi+"　<b>示例名：</b>"+z.ex+"</p>"
+   +"<p class='body'><b>副字池 / 借字：</b>"+prev+" · "+next+" · 华；主字与喜用相冲时，亦可从全诗借合喜用之字作辈字，注明原因即可</p>";
+}
+showPoem(0);
+document.querySelectorAll(".tab").forEach(function(t){
+  t.onclick=function(){document.querySelectorAll(".tab").forEach(function(x){x.classList.remove("on")});t.classList.add("on");
+    document.querySelectorAll(".page").forEach(function(p){p.classList.remove("on")});document.getElementById(t.dataset.p).classList.add("on");window.scrollTo({top:0,behavior:"smooth"});};
+});
+const STEMS=["甲","乙","丙","丁","戊","己","庚","辛","壬","癸"];
+const BRANCHES=["子","丑","寅","卯","辰","巳","午","未","申","酉","戌","亥"];
+const SE=["木","木","火","火","土","土","金","金","水","水"];
+const BE=["水","土","木","木","土","火","火","土","金","金","土","水"];
+const GEN={"木":"火","火":"土","土":"金","金":"水","水":"木"};
+const CTRL={"木":"土","土":"水","水":"火","火":"金","金":"木"};
+document.getElementById("bgo").onclick=function(){
+  const dv=document.getElementById("bd").value, tv=document.getElementById("bt").value;
+  if(!dv||!tv){alert("请先填出生日期和时间");return;}
+  const lon=parseFloat(document.getElementById("bcity").value);
+  const parts=dv.split("-"), tp=tv.split(":");
+  let y=+parts[0], mo=+parts[1], da=+parts[2], hh=+tp[0], mi=+tp[1];
+  let corr=Math.round((lon-120)*4); let tmin=hh*60+mi+corr;
+  let dayShift=0; while(tmin<0){tmin+=1440;dayShift--;} while(tmin>=1440){tmin-=1440;dayShift++;}
+  const base=new Date(Date.UTC(y,mo-1,da)); base.setUTCDate(base.getUTCDate()+dayShift);
+  const Y=base.getUTCFullYear(), M=base.getUTCMonth()+1, D=base.getUTCDate();
+  const sh=Math.floor(tmin/60), smi=tmin%60;
+  let yy=Y; if(M<2||(M===2&&D<4)) yy=Y-1;
+  const yi=((yy-4)%60+60)%60;
+  const bounds=[[1,6,"丑"],[2,4,"寅"],[3,6,"卯"],[4,5,"辰"],[5,6,"巳"],[6,6,"午"],[7,7,"未"],[8,8,"申"],[9,8,"酉"],[10,8,"戌"],[11,7,"亥"],[12,7,"子"]];
+  let mb="子"; for(let i=0;i<bounds.length;i++){ if(M>bounds[i][0]||(M===bounds[i][0]&&D>=bounds[i][1])) mb=bounds[i][2]; }
+  if(M===1&&D<6) mb="丑";
+  const mIdx=BRANCHES.indexOf(mb);
+  const tigerStart=[2,4,6,8,0][(yi%10)%5];
+  const mStemIdx=(tigerStart + ((mIdx-2+12)%12))%10;
+  const epoch=Date.UTC(1900,0,1); const diff=Math.floor((Date.UTC(Y,M-1,D)-epoch)/86400000);
+  const di=((10+diff)%60+60)%60;
+  const dStem=di%10;
+  const hBranch=Math.floor(((sh+1)%24)/2)%12;
+  const ratStart=[0,2,4,6,8][dStem%5];
+  const hStemIdx=(ratStart+hBranch)%10;
+  const pillars=[[STEMS[yi%10],BRANCHES[yi%12]],[STEMS[mStemIdx],mb],[STEMS[dStem],BRANCHES[di%12]],[STEMS[hStemIdx],BRANCHES[hBranch]]];
+  const cnt={"木":0,"火":0,"土":0,"金":0,"水":0};
+  pillars.forEach(function(p){cnt[SE[STEMS.indexOf(p[0])]]++; cnt[BE[BRANCHES.indexOf(p[1])]]++;});
+  const dayE=SE[dStem];
+  const bornE=Object.keys(GEN).filter(function(k){return GEN[k]===dayE})[0];
+  const support=cnt[dayE]+cnt[bornE];
+  const winter=(mb==="亥"||mb==="子"||mb==="丑"), summer=(mb==="巳"||mb==="午"||mb==="未");
+  let xi=[], why=[];
+  if(winter){xi.push("火");why.push("生于寒月，先调候取火——这是四层法第二层，优先级高于扶抑");}
+  if(summer){xi.push("水");why.push("生于燥月，先调候取水润燥");}
+  if(support>=4){why.push("生扶力量 "+support+"/8，日主偏强倾向，喜克、泄、耗求平衡");[CTRL[dayE],GEN[dayE],CTRL[GEN[dayE]]].forEach(function(e){if(xi.indexOf(e)<0)xi.push(e);});}
+  else{why.push("生扶力量 "+support+"/8，日主偏弱倾向，喜生扶");[bornE,dayE].forEach(function(e){if(xi.indexOf(e)<0)xi.push(e);});}
+  const beiTxt= xi.indexOf("火")>=0 ? "第一代主字「晴」（火）合本次喜用，辈字照常用晴。" : "第一代主字「晴」（火）不合本次喜用，按借字规则，可从诗中借合喜用之字作辈字："+POEM.filter(function(z){return xi.indexOf(z.el)>=0}).map(function(z){return z.c+"（"+z.el+"）"}).join("、")+"，或用副字池（宁、和、华）；谱页注明原因即可。";
+  const scored=NAMES.map(function(n){
+    let sc=total(n), det=[];
+    n.elem.forEach(function(e){ if(xi.indexOf(e)>=0){sc+=3;det.push(e+"合喜用+3");} else if(support<4&&(e===CTRL[dayE]||e===CTRL[GEN[dayE]])){sc-=2;det.push(e+"弱局忌克-2");} });
+    return {n:n,sc:sc,det:det};
+  }).sort(function(a,b){return b.sc-a.sc}).slice(0,5);
+  const wxcol={"木":"#4a7c59","火":"#b04a32","土":"#a8842c","金":"#777d46","水":"#3f6d8e"};
+  let html="<h3 style='font-family:var(--serif);font-size:19px'>四柱预览（真太阳时校正 "+(corr>=0?"+":"")+corr+" 分钟，校正后 "+String(sh).padStart(2,"0")+":"+String(smi).padStart(2,"0")+"）</h3>"
+    +"<div style='margin:10px 0'>"+pillars.map(function(p,i){return "<span class='pill'>"+p[0]+p[1]+"<small style='font-size:11px;color:var(--mut)'> "+["年","月","日","时"][i]+"</small></span>"}).join("")+"</div>"
+    +"<p class='body'>日主：<b>"+STEMS[dStem]+"（"+dayE+"）</b></p>"
+    +"<div class='wx'>"+Object.keys(cnt).map(function(k){return "<span style='background:"+wxcol[k]+"'>"+k+" × "+cnt[k]+"</span>"}).join("")+"</div>"
+    +"<p class='body'><b>预览喜用："+xi.join("、")+"</b></p>"
+    +why.map(function(w){return "<p class='body'>· "+w+"</p>"}).join("")
+    +"<p class='body'><b>辈字建议：</b>"+beiTxt+"</p>"
+    +"<h2 class='sec'>按此生辰重排的推荐（前五）</h2>"
+    +scored.map(function(r,i){return "<p class='body'><b>"+(i+1)+". "+r.n.n+"</b>（"+r.n.py+"）综合 "+r.sc+" 分"+(r.det.length?" · "+r.det.join("，"):" · 五行无加减")+" · 英文名 "+r.n.en+"</p>"}).join("")
+    +"<p class='note'>预览级说明：节气按平均日期近似，未含精确交节时刻；旺衰只做生扶计数，未审得令得地、格局与冲合。终审请把日期、精确时间（到分钟）、出生城市发我，走 gao-family-naming skill 四层法复核定稿。</p>";
+  const out=document.getElementById("bout"); out.style.display="block"; out.innerHTML=html; out.scrollIntoView({behavior:"smooth",block:"start"});
+};
+</script>
+</body>
+</html>
